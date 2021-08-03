@@ -9,9 +9,14 @@
 
         public static void Main()
         {
+            // 将方法转换成委托类型
             ThreadStart threadStart = DoWork;
             Thread thread = new Thread(threadStart);
+
+            // 启动线程
             thread.Start();
+
+            // 主线程
             for(int count = 0; count < Repetitions; count++)
             {
                 Console.Write('-');
